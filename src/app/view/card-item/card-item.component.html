@@ -1,0 +1,17 @@
+<mat-card class="card-item">
+  <div class="card-img">
+    <app-image-slider
+      [sliderImages]="card.rooms[0].images.slice(0, 5)"
+      [cardId]="card.id"
+      [height]="'300px'"
+      [width]="'400px'"
+    ></app-image-slider>
+  </div>
+  <a [routerLink]="['/view',card.id]">
+    <mat-card-content (click)="toInnerPage(card.id)">
+      <mat-card-title>{{ card.city }}, {{ card.country }}</mat-card-title>
+      <mat-card-subtitle>{{ card.rooms[0].price | currency }} - night</mat-card-subtitle>
+    </mat-card-content>
+  </a>
+  
+</mat-card>

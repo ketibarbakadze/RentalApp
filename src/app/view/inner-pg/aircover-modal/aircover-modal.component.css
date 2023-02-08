@@ -1,0 +1,11 @@
+.close-btn {
+  height: 26px;
+  width: 26px;
+  border: none;
+  background-color: white;
+  border-radius: 15px;
+  font-size: 14px;
+}
+.close-btn:hover {
+  background-color: rgb(234, 234, 234);
+}

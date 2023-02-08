@@ -1,0 +1,46 @@
+<div *ngIf="hotels != undefined">
+  <div
+    class="d-flex flex-column"
+    style="overflow-y: scroll; overflow-x: hidden; height: 600px"
+  >
+    <div
+      class="d-flex justify-content-between"
+      *ngFor="let order of orders"
+      (click)="openDialogOrder(order, getHotelById(order.hotelId))"
+      style="
+        height: 60px;
+        width: 100%;
+        border: solid 1px rgba(221, 221, 221, 0.5);
+        border-radius: 25px;
+        cursor: pointer;
+        margin: 1px;
+      "
+      [ngStyle]="{
+        'background-color': order.pending === true ? '#FFF9A6' : 'white'
+      }"
+    >
+      <img
+        src="{{ getHotelById(order.hotelId).mainImages[0] }}"
+        style="height: 55px; width: 55px; margin: 2px; border-radius: 10px"
+      />
+      <div
+        class="d-flex justify-content-center align-items-center"
+        style="font-size: 16px; font-weight: 400; margin: 3px"
+      >
+        {{ getHotelById(order.hotelId).address }}
+      </div>
+      <div
+        class="d-flex justify-content-center align-items-center"
+        style="font-size: 16px; font-weight: 400; margin: 3px"
+      >
+        number of guests {{ order.adults }}
+      </div>
+      <div
+        class="d-flex justify-content-center align-items-center"
+        style="font-size: 16px; font-weight: 400; margin: 3px 30px 3px 3px"
+      >
+        price {{ order.price }}$
+      </div>
+    </div>
+  </div>
+</div>

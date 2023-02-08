@@ -1,0 +1,11 @@
+<div class="d-flex flex-column">
+  <div style="margin-bottom: 35px">
+    <button class="close-btn" (click)="closeDialog()">
+      <fa-icon [icon]="faXmark"></fa-icon>
+    </button>
+  </div>
+  <div *ngFor="let offer of offers">
+    {{ offer }}
+    <hr />
+  </div>
+</div>

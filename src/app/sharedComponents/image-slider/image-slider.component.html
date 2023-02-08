@@ -1,0 +1,25 @@
+<p-galleria
+  [value]="sliderImages"
+  [containerStyle]="{
+    display: 'flex',
+    margin: 'auto'
+  }"
+  [numVisible]="5"
+  [circular]="true"
+  [showItemNavigators]="true"
+  [showThumbnails]="false"
+  [showIndicators]="true"
+  [showItemNavigatorsOnHover]="true"
+  [showIndicatorsOnItem]="true"
+>
+  <ng-template pTemplate="item" let-item>
+    <a [routerLink]="cardId" >
+      <img
+        [src]="item"
+        style="display: block"
+        [style.height]="height"
+        [style.width]="width"
+      />
+    </a>
+  </ng-template>
+</p-galleria>

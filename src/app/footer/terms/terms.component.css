@@ -1,0 +1,34 @@
+a{
+    text-decoration: underline !important;
+  }
+  h1{
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  .maintext{
+    margin: 50px 0 50px 0;
+  }
+  strong{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  article{
+   display: block;
+  }
+  .upside{
+    border: 2px solid gainsboro;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  section{
+    padding-bottom: 100px;
+  }
+  table,tbody,td,th{
+    border: 1.3px solid gainsboro;
+  }
+  td{
+    padding: 20px;
+  }
+  li{
+    margin: 10px;
+  }

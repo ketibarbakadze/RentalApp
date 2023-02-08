@@ -1,0 +1,26 @@
+<article>
+  <div class="account-box container d-flex">
+    <div class="col-md-2">
+      <mat-selection-list [multiple]="false">
+        <a routerLink="account-details">
+          <mat-list-option style="text-align: center">
+            Account Details
+          </mat-list-option>
+        </a>
+        <a routerLink="order-history">
+          <mat-list-option style="text-align: center">
+            Order History
+          </mat-list-option>
+        </a>
+        <a routerLink="password"
+          ><mat-list-option style="text-align: center">
+            password
+          </mat-list-option></a
+        >
+      </mat-selection-list>
+    </div>
+    <div style="width: 100%; border-left: solid 1px rgba(192, 192, 192, 0.5)">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</article>

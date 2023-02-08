@@ -1,0 +1,32 @@
+.card-item {
+  width: 400px;
+  height: 400px;
+  margin: 7px;
+}
+.card-img {
+  width: 400px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  background-color: none;
+  object-fit: fill;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+mat-card {
+  box-shadow: none !important;
+}
+
+mat-card {
+  cursor: pointer;
+}
+
+mat-card-content {
+  margin-top: 10px;
+}

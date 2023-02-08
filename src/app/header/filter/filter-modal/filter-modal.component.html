@@ -1,0 +1,197 @@
+
+<h2 mat-dialog-title>Filter</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-dialog-content class="mat-typography">
+    <div>
+      <h2>Select price range</h2>
+      <div class="price-input-container">
+        <div class="price-input-wrapper">
+          <mat-form-field appearance="outline" class="price-input-width">
+            <mat-label>min price(USD)</mat-label>
+            <input matInput placeholder="10" formControlName="priceFrom" />
+          </mat-form-field>
+          <span> — </span>
+          <mat-form-field appearance="outline" class="price-input-width">
+            <mat-label>max price(USD</mat-label>
+            <input formControlName="priceTo" matInput placeholder="300" />
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <h2>Type of place</h2>
+    <div class="place-type-wrapper">
+      <mat-form-field appearance="outline">
+        <mat-select
+          formControlName="typeOfPlace"
+          placeholder="please select one"
+          name="food"
+        >
+          <mat-option *ngFor="let item of typeOfPlace" [value]="item">
+            <p>{{ item }}</p>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <hr />
+    <div class="rooms-and-beds">
+      <h2>Rooms and beds</h2>
+      <div class="tb20px-padding">
+        <h3>Bedrooms</h3>
+        <mat-button-toggle-group
+          formControlName="roomsCount"
+          ngModel="Any"
+          name="fontStyle"
+          aria-label="Font Style"
+        >
+          <mat-button-toggle
+            disableRipple
+            *ngFor="let item of roomsButton"
+            value="{{ item }}"
+            >{{ item }}</mat-button-toggle
+          >
+        </mat-button-toggle-group>
+      </div>
+      <div class="tb20px-padding">
+        <h3>Beds</h3>
+        <mat-button-toggle-group
+          formControlName="bedsPerRoomCount"
+          ngModel="Any"
+          name="fontStyle"
+          aria-label="Font Style"
+        >
+          <mat-button-toggle
+            disableRipple
+            *ngFor="let item of roomsButton"
+            value="{{ item }}"
+            >{{ item }}</mat-button-toggle
+          >
+        </mat-button-toggle-group>
+      </div>
+      <div class="tb20px-padding">
+        <h3>Bathrooms</h3>
+        <mat-button-toggle-group
+          formControlName="bathRoomsCounts"
+          ngModel="Any"
+          name="fontStyle"
+          aria-label="Font Style"
+        >
+          <mat-button-toggle
+            disableRipple
+            *ngFor="let item of roomsButton"
+            value="{{ item }}"
+            >{{ item }}</mat-button-toggle
+          >
+        </mat-button-toggle-group>
+      </div>
+    </div>
+    <hr />
+    <div class="property-type">
+      <div>
+        <h2>Property type</h2>
+        <mat-button-toggle-group
+          formControlName="propertyType"
+          name="fontStyle"
+          aria-label="Font Style"
+        >
+          <mat-button-toggle
+            disableRipple
+            *ngFor="let item of propertyType"
+            value="{{ item }}"
+            >{{ item }}</mat-button-toggle
+          >
+        </mat-button-toggle-group>
+      </div>
+    </div>
+    <hr />
+    <div class="amenities">
+      <h2>Amenities</h2>
+      <div class="essentials">
+        <h3>Essentials</h3>
+        <div class="amenities-items">
+          <div *ngFor="let item of Essentials" class="pd-4">
+            <input
+              (click)="handleAmenities($event)"
+              type="checkbox"
+              value="{{ item }}"
+              id="{{ item }}"
+            />
+            <label for="{{ item }}">
+              <p class="place-type-header">{{ item }}</p>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="features">
+        <h3>Features</h3>
+        <div class="amenities-items">
+          <div *ngFor="let item of features" class="pd-4">
+            <input
+              (click)="handleAmenities($event)"
+              type="checkbox"
+              value="{{ item }}"
+              id="{{ item }}"
+            />
+            <label for="{{ item }}">
+              <p class="place-type-header">{{ item }}</p>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="location">
+        <h3>Location</h3>
+        <div class="amenities-items">
+          <div *ngFor="let item of location" class="pd-4">
+            <input
+              (click)="handleAmenities($event)"
+              type="checkbox"
+              value="{{ item }}"
+              id="{{ item }}"
+            />
+            <label for="{{ item }}">
+              <p class="place-type-header">{{ item }}</p>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="safety">
+        <h3>Safety</h3>
+        <div class="amenities-items">
+          <div *ngFor="let item of safety" class="pd-4">
+            <input
+              (click)="handleAmenities($event)"
+              type="checkbox"
+              value="{{ item }}"
+              id="{{ item }}"
+            />
+            <label for="{{ item }}">
+              <p class="place-type-header">{{ item }}</p>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="host-language tb20px-padding">
+      <h2>Host Language</h2>
+      <div class="amenities-items">
+        <div *ngFor="let item of languages" class="pd-4">
+          <input
+            (click)="handleLanguages($event)"
+            type="checkbox"
+            value="{{ item }}"
+            id="{{ item }}"
+          />
+          <label for="{{ item }}">
+            <p class="place-type-header">{{ item }}</p>
+          </label>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button type="button" mat-button mat-dialog-close>Cancel</button>
+    <button type="submit" mat-button [mat-dialog-close]="true" cdkFocusInitial>
+      Filter
+    </button>
+  </mat-dialog-actions>
+</form>

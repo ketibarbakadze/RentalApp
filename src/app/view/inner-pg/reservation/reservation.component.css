@@ -1,0 +1,90 @@
+.reservation {
+  width: 352px;
+  height: 460px;
+  border: 1px solid rgb(221, 221, 221);
+  box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+  border-radius: 10px;
+  padding: 25px !important;
+}
+::ng-deep
+  .reservation
+  .mat-form-field-type-mat-date-range-input
+  .mat-form-field-infix {
+  width: 300px !important;
+}
+
+::ng-deep .reservation .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: transparent !important;
+}
+::ng-deep .reservation .mat-icon-button {
+  float: right !important;
+  margin-top: -28px !important;
+}
+::ng-deep .reservation .mat-form-field-wrapper {
+  width: 298px !important;
+}
+.datarange {
+  border: solid 1px grey;
+  width: 300px;
+  border-radius: 5px;
+  height: 137px;
+}
+button {
+  margin-top: 20px;
+  background-color: #ff4081 !important;
+  color: white !important;
+}
+::ng-deep .reservation .mat-option {
+  height: 63px !important;
+}
+::ng-deep .reservation .mat-option-text {
+  font-weight: bold;
+}
+p {
+  font-weight: 100;
+}
+p-inputnumber,
+.p-inputnumber {
+  width: 10px !important;
+}
+
+::ng-deep .reservation .p-inputnumber-buttons-horizontal .p-inputnumber-input {
+  width: 35px !important;
+}
+p-inputnumber,
+.p-inputnumber {
+  display: inline-flex;
+  margin-left: -95px;
+}
+p-inputnumber,
+.p-inputnumber {
+  height: 30px;
+}
+::ng-deep
+  .reservation
+  .p-inputnumber-buttons-horizontal
+  .p-button.p-inputnumber-button-down {
+  border-radius: 209px !important;
+  width: 30px !important;
+}
+::ng-deep
+  .reservation
+  .p-inputnumber-buttons-horizontal
+  .p-button.p-inputnumber-button-up {
+  border-radius: 209px !important;
+  width: 30px !important;
+}
+::ng-deep .reservation .mat-select-panel-wrap {
+  margin-top: 33px !important;
+}
+::ng-deep .reservation .p-inputnumber-buttons-horizontal .p-inputnumber-input {
+  border: none;
+}
+
+::ng-deep .inputOnDataTable input {
+  width: 50px !important;
+}
+
+::ng-deep .cdk-overlay-panel {
+  min-width: 338px !important;
+}

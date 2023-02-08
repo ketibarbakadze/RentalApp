@@ -1,0 +1,90 @@
+<div class="container">
+  <form
+    [formGroup]="registerUserForm"
+    #formDirective="ngForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <h1>
+      Register
+      <hr />
+    </h1>
+    <h2>Welcome to Airbnb</h2>
+    <div class="form-group">
+      <input
+        formControlName="email"
+        type="email"
+        class="form-control"
+        placeholder=" Enter Email "
+      />
+    </div>
+    <div class="form-group">
+      <input
+        formControlName="newPassword"
+        type="password"
+        class="form-control"
+        placeholder="Enter password"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        formControlName="newPasswordConfirm"
+        type="password"
+        class="form-control"
+        placeholder="Confirm"
+      />
+    </div>
+    <div
+      *ngIf="registerUserForm.errors?.['passwordConfirm'] && (registerUserForm.touched || registerUserForm.dirty)"
+      style="color: red"
+    >
+      passwords should match
+    </div>
+    <div
+      *ngIf="
+        registerUserForm.get('email')?.invalid &&
+        (registerUserForm.touched || registerUserForm.dirty)
+      "
+      style="color: red"
+    >
+      please enter valid email
+    </div>
+    <span
+      >We’ll call or text you to confirm your number. Standard message and data
+      rates apply.
+      <a routerLink="../privacy"
+        >Privacy <br />
+        Policy</a
+      >
+    </span>
+    <div>
+      <button
+        type="submit"
+        class="form-control regbutton"
+        mat-raised-button
+        color="accent"
+        [disabled]="!registerUserForm.valid || !registerUserForm.touched"
+      >
+        Continue
+      </button>
+    </div>
+    <hr />
+    <article id="signUp">
+      <a class="btn btn-social btn-facebook">
+        <img src="./assets/icons/facebook-icon.svg" alt="facebook" /> Continue
+        with Facebook</a
+      >
+      <a class="btn btn-social btn-google">
+        <img src="./assets/icons/google-icon.svg" alt="google" /> Continue with
+        Google</a
+      >
+      <a class="btn btn-social btn-twitter">
+        <img src="./assets/icons/apple-icon.svg" alt="apple" /> Continue with
+        Apple</a
+      >
+      <a class="btn btn-social btn-google">
+        <img src="./assets/icons/email-icon.svg" alt="email" /> Continue with
+        Email</a
+      >
+    </article>
+  </form>
+</div>

@@ -1,0 +1,61 @@
+<div class="container">
+  <form (ngSubmit)="onFormSubmit(form)" #form="ngForm">
+    <h1>
+      Log in
+      <hr />
+    </h1>
+    <h2>Welcome to Airbnb</h2>
+    <div class="form-group">
+      <input
+        required
+        pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+        ngModel
+        name="email"
+        type="email"
+        class="form-control"
+        placeholder=" Enter Email "
+      />
+    </div>
+    <div class="form-group">
+      <input
+        ngModel
+        name="password"
+        type="password"
+        class="form-control"
+        placeholder="Enter password"
+      />
+    </div>
+    <span
+      >We’ll call or text you to confirm your number. Standard message and data
+      rates apply.
+      <a href=""
+        >Privacy <br />
+        Policy</a
+      >
+    </span>
+    <div>
+      <button type="submit" class="form-control regbutton" mat-raised-button>
+        Continue
+      </button>
+    </div>
+    <hr />
+    <article id="signUp">
+      <a href="#" class="btn btn-social btn-facebook">
+        <img src="./assets/icons/facebook-icon.svg" alt="facebook" /> Continue
+        with Facebook</a
+      >
+      <a href="#" class="btn btn-social btn-google">
+        <img src="./assets/icons/google-icon.svg" alt="google" /> Continue with
+        Google</a
+      >
+      <a href="#" class="btn btn-social btn-twitter">
+        <img src="./assets/icons/apple-icon.svg" alt="apple" /> Continue with
+        Apple</a
+      >
+      <a href="#" class="btn btn-social btn-google">
+        <img src="./assets/icons/email-icon.svg" alt="email" /> Continue with
+        Email</a
+      >
+    </article>
+  </form>
+</div>

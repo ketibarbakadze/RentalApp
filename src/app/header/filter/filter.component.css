@@ -1,0 +1,85 @@
+.icon-container {
+  background-color: white;
+  margin-top: 20px;
+}
+
+.filter-icons {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px; */
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.filter-icons:hover {
+  border-bottom: 1px solid black;
+}
+
+.modal-btn {
+  border: 1px solid #dddddd;
+  border-radius: 10%;
+  width: 115px;
+  height: 50px;
+}
+
+img {
+  width: 24px;
+  height: 24px;
+}
+
+p-carousel {
+  display: block;
+  box-sizing: border-box;
+  flex-direction: row;
+  margin-left: 15px;
+  width: 90%;
+  margin-left: 15px;
+  text-align: center;
+}
+
+p-carousel a {
+  border: none;
+  border-bottom: 2px solid transparent ;
+  transition: all 0.3s;
+  background: none;
+  cursor: pointer;
+}
+
+p-carousel a:hover {
+  border-bottom: 2px solid #dddd ;
+}
+
+.active {
+  border-bottom: 2px solid black !important;
+}
+
+p-carousel p {
+  font-size: 12px !important;
+  color: #717171;
+}
+
+::ng-deep .p-carousel-items-content {
+  width: 100% !important;
+  text-align: center;
+  border-bottom: 1px solid transparent !important;
+}
+
+p {
+  margin: 0;
+}
+
+::ng-deep .p-carousel-prev {
+  margin-right: -10px !important;
+  margin-top: -10px !important;
+}
+
+::ng-deep .icon-container .p-disabled {
+  visibility: hidden !important;
+}
+
+a {
+  text-decoration: none;
+  width: 100%;
+}

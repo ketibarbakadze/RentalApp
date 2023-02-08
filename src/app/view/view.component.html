@@ -1,0 +1,10 @@
+<article>
+  <div class="mt-2 ms-5" >
+    <div class="col-md-12 d-flex flex-wrap m-auto justify-content-start">
+      <app-card-item
+        *ngFor="let cardItem of cards; let i = index"
+        [card]="cardItem"
+      ></app-card-item>
+    </div>
+  </div>  
+</article>

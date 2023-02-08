@@ -1,0 +1,147 @@
+<form [formGroup]="userDetailForm" (ngSubmit)="onSubmit()">
+  <div class="d-flex flex-column mt-2 m-lg-2" style="width: 60%; height: 100%;">
+    <mat-form-field appearance="fill">
+      <mat-label>first Name</mat-label>
+      <input
+        matInput
+        formControlName="firstName"
+        [readonly]="!changeDetails"
+      />
+      <mat-error
+        *ngIf="
+          userDetailForm.get('firstName')?.invalid &&
+          userDetailForm.get('firstName')?.touched
+        "
+        >please enter first name</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName" [readonly]="!changeDetails" />
+      <mat-error
+        *ngIf="
+          userDetailForm.get('lastName')?.invalid &&
+          userDetailForm.get('lastName')?.touched
+        "
+        >please enter last name</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Country</mat-label>
+      <input matInput formControlName="country" [readonly]="!changeDetails" />
+      <mat-error
+        *ngIf="
+          userDetailForm.get('country')?.invalid &&
+          userDetailForm.get('country')?.touched
+        "
+        >please enter country</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>City</mat-label>
+      <input matInput formControlName="city" [readonly]="!changeDetails" />
+      <mat-error
+        *ngIf="
+          userDetailForm.get('city')?.invalid &&
+          userDetailForm.get('city')?.touched
+        "
+        >please enter city</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>select card</mat-label>
+      <mat-select formControlName="card" [disabled]="!changeDetails">
+        <mat-option value="masterCard">master card</mat-option>
+        <mat-option value="visa">visa</mat-option>
+        <mat-option value="americanExpress">american express</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div formGroupName="cardNumber" style="width: 100%">
+      <mat-form-field
+        appearance="fill"
+        *ngIf="userDetailForm.get('card')?.value == 'masterCard'"
+        style="width: 100%"
+      >
+        <mat-label>master card</mat-label>
+        <input
+          matInput
+          formControlName="masterCard"
+          [readonly]="!changeDetails"
+        />
+        <mat-error
+          *ngIf="
+            userDetailForm.get('cardNumber.masterCard')?.invalid &&
+            userDetailForm.get('cardNumber.masterCard')?.touched
+          "
+          >please enter card number like 0000-0000-0000-0000</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field
+        appearance="fill"
+        *ngIf="userDetailForm.get('card')?.value == 'visa'"
+        style="width: 100%"
+      >
+        <mat-label>visa</mat-label>
+        <input matInput formControlName="visa" [readonly]="!changeDetails" />
+        <mat-error
+          *ngIf="
+            userDetailForm.get('cardNumber.visa')?.invalid &&
+            userDetailForm.get('cardNumber.visa')?.touched
+          "
+          >please enter card number like 0000-0000-0000-0000</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field
+        appearance="fill"
+        *ngIf="userDetailForm.get('card')?.value == 'americanExpress'"
+        style="width: 100%"
+      >
+        <mat-label>American Express</mat-label>
+        <input
+          matInput
+          formControlName="americanExpress"
+          [readonly]="!changeDetails"
+        />
+        <mat-error
+          *ngIf="
+            userDetailForm.get('cardNumber.americanExpress')?.invalid &&
+            userDetailForm.get('cardNumber.americanExpress')?.touched
+          "
+          >please enter card number like 0000-0000-0000-0000</mat-error
+        >
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      style="width: 10rem"
+      (click)="changeToggle()"
+      *ngIf="!changeDetails"
+    >
+      change
+    </button>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit"
+      style="width: 10rem"
+      [disabled]="!userDetailForm.valid || !userDetailForm.touched"
+      *ngIf="changeDetails"
+    >
+      apply
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      style="width: 10rem; margin-left: 10px"
+      (click)="changeToggle()"
+      *ngIf="changeDetails"
+    >
+      cancel
+    </button>
+  </div>
+</form>

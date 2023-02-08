@@ -1,0 +1,129 @@
+<div class="reservation">
+  <p style="font-weight: bold; font-size: 16px">{{ payOnDay }}$ night</p>
+  <form [formGroup]="reserveDetailForm" (ngSubmit)="onSubmit()">
+    <div class="datarange">
+      <mat-form-field appearance="fill">
+        <mat-label>Check In - Checkout</mat-label>
+        <mat-date-range-input
+          formGroupName="range"
+          [rangePicker]="picker"
+          [min]="minDate"
+        >
+          <input
+            matStartDate
+            formControlName="start"
+            placeholder="Start date"
+          />
+          <input matEndDate formControlName="end" placeholder="End date" />
+        </mat-date-range-input>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="test">
+        <mat-label>Guests</mat-label>
+        <mat-select>
+          <mat-select-trigger>
+            {{value}}
+          </mat-select-trigger>
+          <mat-option style="height: 60px; margin-top: 20px;" *ngFor="let item of testArr"  disabled=""
+            >{{item[0]}}
+            <p style="margin-top: -20px">{{item[1]}}</p>
+            <div style="display: flex; float: right; margin-top: -60px; width: 60px;">
+              <p-inputNumber
+                styleClass="inputOnDataTable"
+                [min]="0"
+                [max]="maxGuestCount"
+                [formControlName]="item[0]"
+                [showButtons]="true"
+                buttonLayout="horizontal"
+                spinnerMode="horizontal"
+                inputId="horizontal"
+                decrementButtonClass="p-button-secondary"
+                incrementButtonClass="p-button-secondary"
+                incrementButtonIcon="pi pi-plus"
+                decrementButtonIcon="pi pi-minus"
+              ></p-inputNumber>
+            </div>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button
+      type="submit"
+      class="form-control regbutton"
+      mat-raised-button
+      color="accent"
+    >
+      Reserve
+    </button>
+  </form>
+  <p style="margin: 15px 71px">You won't be charged yet</p>
+  <p
+    style="
+      text-decoration: underline;
+      cursor: pointer;
+      margin-top: 25px;
+      font-size: 16px;
+    "
+  >
+    <span *ngIf="reserveDetailForm.get('range')?.get('end')?.value != null">
+      {{
+        getRange(
+          reserveDetailForm.get("range")?.get("start")?.value,
+          reserveDetailForm.get("range")?.get("end")?.value
+        )
+      }}
+      * {{ payOnDay }}
+    </span>
+  </p>
+  <p style="float: right; margin-top: -30px; font-size: 16px">
+    <span *ngIf="reserveDetailForm.get('range')?.get('end')?.value != null">
+      ${{
+        getRange(
+          reserveDetailForm.get("range")?.get("start")?.value,
+          reserveDetailForm.get("range")?.get("end")?.value
+        ) * payOnDay
+      }}
+    </span>
+  </p>
+  <p
+    style="
+      text-decoration: underline;
+      cursor: pointer;
+      margin-top: 15px;
+      font-size: 16px;
+    "
+  >
+    Hospitality fees
+  </p>
+  <p style="float: right; margin-top: -30px; font-size: 16px">$163</p>
+  <hr />
+  <p
+    style="
+      font-weight: bold;
+      text-decoration: underline;
+      cursor: pointer;
+      margin-top: 40px;
+      font-size: 16px;
+    "
+  >
+    Total before taxes
+  </p>
+  <p
+    style="float: right; margin-top: -30px; font-size: 16px; font-weight: bold"
+  >
+    <span  *ngIf="reserveDetailForm.get('range')?.get('end')?.value != null">
+      ${{
+        getRange(
+          reserveDetailForm.get("range")?.get("start")?.value,
+          reserveDetailForm.get("range")?.get("end")?.value
+        ) *
+          payOnDay +
+          163
+      }}
+    </span>
+  </p>
+</div>

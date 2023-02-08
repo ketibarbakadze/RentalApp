@@ -1,0 +1,11 @@
+<div class="field ">
+	<p-calendar 
+	[minDate]="minDate"
+	[(ngModel)]="dateRange"
+	(onSelect)="submitdata()"
+	[numberOfMonths]="2"
+	[inline]="true" 
+	selectionMode="range"
+	inputId="range">
+	</p-calendar>
+</div>

@@ -1,0 +1,20 @@
+.header-container{
+	background-color: white;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid rgba(192, 192, 192, 0.5);
+}
+
+.header-buttons{
+	display: flex;
+	gap: 15px;
+}
+
+.main-logo{
+	cursor: pointer;
+	margin-left: 30px;
+}
+
+a{
+	text-decoration: none;
+}

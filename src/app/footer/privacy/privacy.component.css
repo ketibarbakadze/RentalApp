@@ -1,0 +1,17 @@
+article{
+    margin: 50px auto 50px auto !important;
+    padding-bottom: 70px;
+  }
+  a{
+    text-decoration: none;
+  }
+  h1{
+    font-size: 2rem;
+    letter-spacing: 1px; 
+  }
+  .image{
+    margin-bottom: 20px;
+  }
+  li{
+    margin: 10px;
+  }

@@ -1,0 +1,140 @@
+h2{
+	font-weight:500;
+}
+
+.place-type-wrapper{
+	display: flex;
+}
+
+.place-type-el{
+	display: flex;
+	align-items: flex-start;
+	width: 100%!important;
+	margin-left: 2px;
+}
+
+.place-type-el p {
+	margin-left: 9px;
+	margin-bottom: 0;
+}
+
+.place-type-header{
+	color: rgb(34, 34, 34) !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+	margin-bottom: 0px;
+	margin-bottom: 4px!important;
+}
+
+input[type=checkbox]{
+	height: 24px;
+	min-width: 24px;
+}
+
+hr{
+	height: 1px;
+	background-color: rgb(235, 235, 235);
+	border: none;
+	margin: 32px 0px !important;
+}
+
+.rooms-button{
+	cursor: pointer;
+	text-align: center;
+	border: 1px solid rgb(34, 34, 34)!important;
+	outline: none!important;
+	padding: 10px 20px!important;
+	border-radius: 30px!important;
+	min-width: 59px!important;
+	font-size: 12px!important;
+	background-color: white;
+}
+
+::ng-deep .mat-button-toggle-checked{
+	background-color: black!important;
+	color: white!important;
+}
+
+::ng-deep .mat-button-toggle{
+	font-size: 12px!important;
+	background-color: white;
+	min-width: 70px!important;
+	border: 1px solid rgb(34, 34, 34)!important;
+	border-radius: 30px!important;
+}
+
+::ng-deep .mat-button-toggle-button:hover{
+	background-color: none	;
+}
+
+::ng-deep .mat-button-toggle-group{
+	border: none;
+}
+mat-button-toggle-group{
+	display: flex;
+	justify-content: space-between;
+}
+
+.tb20px-padding{
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.pd-4{
+	padding: 4px 0;
+}
+
+.property-type mat-button-toggle{
+	text-align: center;
+	width: 200px!important;
+}
+
+.property-type mat-button-toggle-group{
+	justify-content: space-around;
+}
+
+::ng-deep .mat-form-field {
+    width: 100%;
+}
+
+.amenities-items{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.amenities-items div{
+	flex: 50%;
+	display: flex;
+	gap: 6px;
+	align-items: flex-start;
+}
+
+.features, .location, .safety{
+	margin-top: 30px;
+}
+
+.flex-start{
+	align-items: flex-start;
+}
+
+.price-input-width {
+	min-width: 150px;
+  	max-width: 600px;
+}
+
+.price-input-wrapper{
+	display: flex;
+	align-items: center;
+	text-align: center;
+	width: inherit;
+}
+
+::ng-deep.price-input-wrapper .mat-form-field-wrapper {
+	padding: 0!important;
+}
+
+.price-input-container{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}

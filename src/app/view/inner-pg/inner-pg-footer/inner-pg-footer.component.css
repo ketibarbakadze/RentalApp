@@ -1,0 +1,21 @@
+.main {
+  background-color: rgb(247, 247, 247);
+  width: 100%;
+  height: 300px;
+  border-top: solid 1px rgba(221, 221, 221, 0.5);
+}
+.sub-menus {
+  margin-top: 20px;
+}
+.head-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+.sub-titles {
+  font-size: 14px;
+  margin-top: 5px;
+}
+.sub-titles:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

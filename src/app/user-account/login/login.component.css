@@ -1,0 +1,49 @@
+.container {
+  width: 650px;
+  height: 750px;
+  background-color: rgb(230, 237, 237);
+  margin-top: 35px;
+  border-radius: 15px;
+}
+.container h1 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+.container h2 {
+  font-size: 24px;
+  line-height: 26px;
+  padding-bottom: 10px;
+}
+
+span a {
+  color: black;
+  font-weight: 550;
+}
+.form-control {
+  height: 60px;
+  margin-top: 10px;
+}
+.regbutton {
+  margin-top: 50px;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
+  background-color: rgb(255, 64, 129);
+  color: white;
+}
+.btn {
+  display: block;
+  background: white;
+  color: hsl(0, 0, 100);
+  text-decoration: none;
+  margin: 20px 0;
+  padding: 15px 15px;
+  border-radius: 5px;
+  position: relative;
+  border: solid 1px rgb(27, 27, 27);
+}
+#signUp a img {
+  float: left;
+}
